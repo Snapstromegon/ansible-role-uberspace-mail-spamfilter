@@ -1,0 +1,10 @@
+- name: Read spamfilter status
+  command: uberspace mail spamfolder status
+  register: uberspace_mail_spamfilter_result
+  failed_when: uberspace_mail_spamfilter_result.rc != 0
+  changed_when: false
+
+- name: Set spamfilter status
+  when: 
+    - ("disabled" if state == "present" else "enabled") in uberspace_mail_spamfilter_result.stdout
+  command: "uberspace mail spamfolder {{ 'enable' if state == 'present' else 'disable' }}"
