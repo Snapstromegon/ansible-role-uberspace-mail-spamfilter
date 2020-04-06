@@ -1,0 +1,23 @@
+galaxy_info:
+  role_name: uberspace-mail-spamfilter
+  author: Raphael Höser
+  description: Enable/Disable spamfilter for your uberspace
+
+  license: ISC
+
+  min_ansible_version: 2.5
+
+  platforms:
+  - name: Uberspace
+    versions:
+    - 7
+
+  galaxy_tags:
+    - uberspace
+    - mail
+    - spam
+    - spamfilter
+    - spamfolder
+    - filter
+
+dependencies: []
